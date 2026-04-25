@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+<title>Frontend Mentor | Digitalbank landing page</title>
+
+<style>
+body{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  background:#f2f2f2;
+  font-family:sans-serif;
+  margin:0;
+}
+
+header{
+  background:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  position:absolute;
+  top:0;
+  z-index:1;
+  padding:15px;
+}
+
+.hd{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  width:90%;
+}
+
+nav{
+  display:flex;
+  gap:20px;
+  color:grey;
+}
+
+nav span{
+  cursor:pointer;
+}
+
+.btn{
+  border-radius:20px;
+  padding:13px;
+  background:green;
+  color:white;
+  border:none;
+}
+
+.buttn{
+  display:none;
+  position:absolute;
+  top:10px;
+  right:10px;
+}
+
+.menu_icon{
+  width:15px;
+}
+
+.boxx{
+  display:flex;
+  width:100%;
+  height: 660px;
+  align-items:center;
+  justify-content:space-between;
+  position: relative;
+  overflow:hidden;
+
+}
+
+.left{
+  margin:80px;
+  padding-left:60px;
+  padding-top:150px;
+}
+
+.left h1{
+  font-size:60px;
+}
+
+.left p{
+  color:gray;
+}
+
+.left button{
+  border-radius:15px;
+  padding:10px;
+  border:none;
+  background:green;
+  color:white;
+  width:150px;
+}
+
+.bg_img{
+  position: absolute;
+  width: 1000px;
+  top: -130px;
+  right: -390px;
+  z-index: -1;
+}
+
+.mockups_img{
+  position: absolute;
+  width: 650px;
+  top: -100px;
+  right: -220px;
+  z-index: -1;
+}
+
+.one_box{
+  background:white;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  margin-top:100px;
+  padding-left:180px;
+}
+
+.section-title{
+  font-size:40px;
+}
+
+.section-text{
+  color:gray;
+}
+
+.box{
+  display:flex;
+  flex-direction:column;
+  background:white;
+  border-radius:7px;
+  padding:60px;
+}
+
+.row{
+  display:flex;
+  gap:80px;
+  padding:30px;
+  margin:40px;
+}
+
+.boxes img{
+  width:60px;
+}
+
+.boxes p{
+  color:gray;
+}
+
+.articles-title{
+  display:flex;
+  padding-right:950px;
+  margin-top:90px;
+  gap: 30px;
+}
+
+.row_eki{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  margin:20px;
+  width: 100%;
+  max-width: 1200px;
+
+}
+
+.article{
+  width:20%;
+  background:white;
+  border-radius:7px;
+  height: 350px;
+}
+
+.article img{
+  width:100%;
+  border-radius:7px 7px 0 0;
+}
+
+.text{
+  padding:10px;
+}
+
+.author{
+  font-size:9px;
+  color:gray;
+}
+
+.title{
+  font-size:18px;
+}
+
+.desc{
+  font-size:12px;
+  color:gray;
+}
+
+footer{
+  background:#232d7d;
+  width:100%;
+  padding:20px;
+}
+
+.cont{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:200px;
+}
+
+.koropka1{
+  display:flex;
+  flex-direction:column;
+  gap:50px;
+}
+
+.images{
+  display:flex;
+  gap:10px;
+}
+
+.images img{
+  width:20px;
+}
+
+.koropka2,
+.koropka3,
+.koropka4{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  color:rgba(192,192,192,0.684);
+}
+
+.koropka2 span,
+.koropka3 span{
+  cursor:pointer;
+}
+
+.koropka4 button{
+  border-radius:15px;
+  padding:10px;
+  border:none;
+  background:green;
+  color:white;
+  width:150px;
+}
+
+@media screen and (max-width:768px){
+  .right{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .bg_img,
+  .mockups_img{
+    position: static;
+    width: 100%;
+  }
+
+  .boxx{
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .buttn{
+    display: block;
+  }
+
+  nav{
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    padding: 20px;
+    border-radius: 10px;
+
+    display: none;
+  }
+
+  nav.active{
+    display: flex;
+  }
+
+  .btn{
+    display: none;
+  }
+  .row_eki{
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .article{
+    width: 90%;
+  }
+    .one_box{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .bg_img{
+    position: absolute;
+    width: 150%;
+    top: -50px;
+    right: -200px;
+  }
+
+  .mockups_img{
+    position: relative;
+    width: 90%;
+    top: -120px;
+  }
+}
+@media screen and (max-width:500px){
+  .right{
+    background-image:url("images/bg-intro-mobile.svg");
+  }
+  .boxx{
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+    text-align: center;
+  }
+  .left{
+    
+  }
+  .row{
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  
+  .cont{
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+  }
+.koropka1,
+.koropka2,
+.koropka3,
+.koropka4{
+  flex-direction:column;
+ align-items: center;
+ justify-content: center;
+  gap:20px;
+  color:rgba(192,192,192,0.684);
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="hd">
+    <img src="images/logo-dark.svg" alt="logo">
+
+  
+    <button class="buttn" id="burger">
+      <img src="images/menu_icon.png" class="menu_icon">
+    </button>
+
+    <nav id="navMenu">
+      <span>Home</span>
+      <span>About</span>
+      <span>Contact</span>
+      <span>Blog</span>
+      <span>Careers</span>
+    </nav>
+
+    <button class="btn">Request Invite</button>
+  </div>
+</header>
+
+<div class="boxx">
+  <div class="left">
+    <h1>Next generation <br> digital banking</h1>
+    <p>
+      Take your financial life online. Your Digitalbank <br>
+      account will be a one-stop-shop for spending, saving, <br>
+      budgeting, investing, and much more.
+    </p>
+    <button>Request Invite</button>
+  </div>
+
+  <div class="right">
+    <img src="images/bg-intro-desktop.svg" class="bg_img">
+    <img src="images/image-mockups.png" class="mockups_img">
+  </div>
+</div>
+
+<div class="one_box">
+  <div class="box">
+    <h1 class="section-title">Why choose Digitalbank?</h1>
+    <p class="section-text">
+      We leverage Open Banking to turn your bank account into your financial hub. <br>
+      Control your finances like never before.
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="boxes">
+      <img src="images/icon-online.svg">
+      <h4>Online Banking</h4>
+      <p>Our modern web and mobile <br> applications allow you to keep <br> track of your finances wherever <br> you are in the world.</p>
+    </div>
+
+    <div class="boxes">
+      <img src="images/icon-online.svg">
+      <h4>Simple Budgeting</h4>
+      <p>Our modern web and mobile <br> applications allow you to keep <br> track of your finances wherever <br> you are in the world.</p>
+    </div>
+
+    <div class="boxes">
+      <img src="images/icon-online.svg">
+      <h4>Fast Onboarding</h4>
+      <p>Our modern web and mobile <br> applications allow you to keep <br> track of your finances wherever <br> you are in the world.</p>
+    </div>
+
+    <div class="boxes">
+      <img src="images/icon-online.svg">
+      <h4>Open API</h4>
+      <p>Our modern web and mobile <br> applications allow you to keep <br> track of your finances wherever <br> you are in the world.</p>
+    </div>
+  </div>
+</div>
+
+<h1 class="articles-title">Latest Articles</h1>
+
+<div class="row_eki">
+
+  <div class="article">
+    <img src="images/image-currency.jpg">
+    <div class="text">
+      <div class="author">By Claire Robinson</div>
+      <div class="title">Receive money in any <br> currency with no fees</div>
+      <div class="desc">
+        The world is getting smaller and <br>
+        we’re becoming more mobile. So <br>
+        why should you be forced to only <br>
+        receive money in a single …
+      </div>
+    </div>
+  </div>
+
+  <div class="article">
+    <img src="images/image-restaurant.jpg">
+    <div class="text">
+      <div class="author">By Wilson Hutton</div>
+      <div class="title">Treat yourself without <br> worrying about money.</div>
+      <div class="desc">
+        Our simple budgeting feature <br>
+        allows you to separate out your <br>
+        spending and set realistic limits <br>
+        each month. That means you …
+      </div>
+    </div>
+  </div>
+
+  <div class="article">
+    <img src="images/image-plane.jpg">
+    <div class="text">
+      <div class="author">By Wilson Hutton</div>
+      <div class="title">Take your Digitalbank card <br> wherever you go</div>
+      <div class="desc">
+        We want you to enjoy your travels. <br>
+        This is why we don’t charge any fees <br>
+        on purchases while you’re abroad. <br>
+        We’ll even show you …
+      </div>
+    </div>
+  </div>
+
+  <div class="article">
+    <img src="images/image-confetti.jpg">
+    <div class="text">
+      <div class="author">By Claire Robinson</div>
+      <div class="title">Our invite-only Beta accounts are now live!</div>
+      <div class="desc">
+        After a lot of hard work by the 
+        whole team, we’re excited to 
+        launch our closed beta. It’s easy 
+        to request an invite through ...
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="cont">
+
+    <div class="koropka1">
+      <img src="images/logo-light.svg" width="170px">
+      <div class="images">
+        <img src="images/icon-facebook.svg">
+        <img src="images/icon-youtube.svg">
+        <img src="images/icon-twitter.svg">
+        <img src="images/icon-pinterest.svg">
+        <img src="images/icon-instagram.svg">
+      </div>
+    </div>
+
+    <div class="koropka2">
+      <span>About Us</span>
+      <span>Contact</span>
+      <span>Blog</span>
+    </div>
+
+    <div class="koropka3">
+      <span>Careers</span>
+      <span>Support</span>
+      <span>Privacy Policy</span>
+    </div>
+
+    <div class="koropka4">
+      <button>Request Invite</button>
+      <span>© Digitalbank. All Rights Reserved</span>
+    </div>
+
+  </div>
+</footer>
+<script>
+const burger = document.getElementById("burger");
+const nav = document.getElementById("navMenu");
+
+burger.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+</script>
+</body>
+</html>
